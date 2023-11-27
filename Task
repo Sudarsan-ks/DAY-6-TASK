@@ -57,4 +57,14 @@ request.open("GET","https://restcountries.com/v3.1/all");
 request.send();
 request.onload=function(){
     var sud=JSON.parse(request.response);
-}
+    console.log(sud);
+    for(var i=0; i<sud.length; i++){
+        if(sud[i].currencies){
+            for(var a in sud[i].currencies){
+               if(a=='USD'){
+                console.log(sud[i].name)
+               }
+            }
+        }
+    }
+};
